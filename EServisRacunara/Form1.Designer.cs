@@ -30,13 +30,13 @@
         {
             System.Windows.Forms.GroupBox groupBox1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnDodajUredjaj = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblNaslov = new System.Windows.Forms.Label();
+            this.btnDodajUredjaj = new System.Windows.Forms.Button();
             this.sideBar = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnUredjaji = new System.Windows.Forms.Button();
             this.btnKlijenti = new System.Windows.Forms.Button();
             this.btnPocetna = new System.Windows.Forms.Button();
@@ -52,12 +52,14 @@
             this.lblZavrseno = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataPocetna = new System.Windows.Forms.DataGridView();
+            this.txtPretragaKlijenata = new System.Windows.Forms.TextBox();
+            this.txtPretragaUredjaja = new System.Windows.Forms.TextBox();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
             this.sideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHamburger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableKorisnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableUredjaji)).BeginInit();
@@ -68,6 +70,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(this.txtPretragaUredjaja);
+            groupBox1.Controls.Add(this.txtPretragaKlijenata);
             groupBox1.Controls.Add(this.lblNaslov);
             groupBox1.Controls.Add(this.btnDodajUredjaj);
             groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -76,6 +80,17 @@
             groupBox1.Size = new System.Drawing.Size(877, 84);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
+            // 
+            // lblNaslov
+            // 
+            this.lblNaslov.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblNaslov.AutoSize = true;
+            this.lblNaslov.Font = new System.Drawing.Font("Inter", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaslov.Location = new System.Drawing.Point(354, 16);
+            this.lblNaslov.Name = "lblNaslov";
+            this.lblNaslov.Size = new System.Drawing.Size(208, 62);
+            this.lblNaslov.TabIndex = 3;
+            this.lblNaslov.Text = "E-Servis";
             // 
             // btnDodajUredjaj
             // 
@@ -88,17 +103,6 @@
             this.btnDodajUredjaj.Text = "Dodaj Novi Uređaj";
             this.btnDodajUredjaj.UseVisualStyleBackColor = true;
             this.btnDodajUredjaj.Click += new System.EventHandler(this.btnDodajUredjaj_Click);
-            // 
-            // lblNaslov
-            // 
-            this.lblNaslov.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblNaslov.AutoSize = true;
-            this.lblNaslov.Font = new System.Drawing.Font("Inter", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaslov.Location = new System.Drawing.Point(354, 16);
-            this.lblNaslov.Name = "lblNaslov";
-            this.lblNaslov.Size = new System.Drawing.Size(208, 62);
-            this.lblNaslov.TabIndex = 3;
-            this.lblNaslov.Text = "E-Servis";
             // 
             // sideBar
             // 
@@ -128,6 +132,18 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Enabled = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 96);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(46, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
@@ -140,18 +156,6 @@
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 96);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 34);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
             // 
             // btnUredjaji
             // 
@@ -229,6 +233,8 @@
             // tableKorisnici
             // 
             this.tableKorisnici.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableKorisnici.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.tableKorisnici.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableKorisnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableKorisnici.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableKorisnici.Location = new System.Drawing.Point(185, 262);
@@ -246,7 +252,8 @@
             // tableUredjaji
             // 
             this.tableUredjaji.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tableUredjaji.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableUredjaji.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.tableUredjaji.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableUredjaji.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tableUredjaji.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableUredjaji.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -269,10 +276,10 @@
             // 
             // dataGridViewButtonColumn1
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewButtonColumn1.HeaderText = "Menjanje";
             this.dataGridViewButtonColumn1.MinimumWidth = 6;
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
@@ -364,6 +371,8 @@
             // dataPocetna
             // 
             this.dataPocetna.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataPocetna.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataPocetna.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataPocetna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPocetna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataPocetna.Location = new System.Drawing.Point(185, 262);
@@ -374,6 +383,30 @@
             this.dataPocetna.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataPocetna.Size = new System.Drawing.Size(877, 269);
             this.dataPocetna.TabIndex = 12;
+            // 
+            // txtPretragaKlijenata
+            // 
+            this.txtPretragaKlijenata.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPretragaKlijenata.Location = new System.Drawing.Point(15, 45);
+            this.txtPretragaKlijenata.Name = "txtPretragaKlijenata";
+            this.txtPretragaKlijenata.Size = new System.Drawing.Size(185, 28);
+            this.txtPretragaKlijenata.TabIndex = 6;
+            this.txtPretragaKlijenata.Text = "Pretraga...";
+            this.txtPretragaKlijenata.Visible = false;
+            this.txtPretragaKlijenata.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPretragaKlijenata_MouseClick);
+            this.txtPretragaKlijenata.TextChanged += new System.EventHandler(this.txtPretragaKlijenata_TextChanged);
+            // 
+            // txtPretragaUredjaja
+            // 
+            this.txtPretragaUredjaja.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPretragaUredjaja.Location = new System.Drawing.Point(15, 45);
+            this.txtPretragaUredjaja.Name = "txtPretragaUredjaja";
+            this.txtPretragaUredjaja.Size = new System.Drawing.Size(185, 28);
+            this.txtPretragaUredjaja.TabIndex = 7;
+            this.txtPretragaUredjaja.Text = "Pretraga...";
+            this.txtPretragaUredjaja.Visible = false;
+            this.txtPretragaUredjaja.Click += new System.EventHandler(this.txtPretragaUredjaja_Click);
+            this.txtPretragaUredjaja.TextChanged += new System.EventHandler(this.txtPretragaUredjaja_TextChanged);
             // 
             // Form1
             // 
@@ -392,8 +425,8 @@
             groupBox1.PerformLayout();
             this.sideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHamburger)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableKorisnici)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableUredjaji)).EndInit();
@@ -429,6 +462,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtPretragaKlijenata;
+        private System.Windows.Forms.TextBox txtPretragaUredjaja;
     }
 }
 

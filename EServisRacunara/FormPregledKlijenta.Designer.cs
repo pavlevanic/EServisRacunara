@@ -49,6 +49,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnPromeniStatus = new System.Windows.Forms.Button();
             this.btnPreuzeto = new System.Windows.Forms.Button();
+            this.btnObrisiKlijenta = new System.Windows.Forms.Button();
             this.klijentTopbar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,9 +60,9 @@
             this.lblImeKlijenta.AutoSize = true;
             this.lblImeKlijenta.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblImeKlijenta.Font = new System.Drawing.Font("Inter SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImeKlijenta.Location = new System.Drawing.Point(4, 23);
+            this.lblImeKlijenta.Location = new System.Drawing.Point(3, 18);
             this.lblImeKlijenta.Name = "lblImeKlijenta";
-            this.lblImeKlijenta.Size = new System.Drawing.Size(139, 30);
+            this.lblImeKlijenta.Size = new System.Drawing.Size(111, 24);
             this.lblImeKlijenta.TabIndex = 0;
             this.lblImeKlijenta.Text = "Ime Prezime";
             // 
@@ -70,7 +71,7 @@
             this.lblTelefonKlijenta.AutoSize = true;
             this.lblTelefonKlijenta.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblTelefonKlijenta.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefonKlijenta.Location = new System.Drawing.Point(178, 23);
+            this.lblTelefonKlijenta.Location = new System.Drawing.Point(114, 18);
             this.lblTelefonKlijenta.Name = "lblTelefonKlijenta";
             this.lblTelefonKlijenta.Size = new System.Drawing.Size(70, 24);
             this.lblTelefonKlijenta.TabIndex = 1;
@@ -81,7 +82,7 @@
             this.lblAdresaKlijenta.AutoSize = true;
             this.lblAdresaKlijenta.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblAdresaKlijenta.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdresaKlijenta.Location = new System.Drawing.Point(265, 23);
+            this.lblAdresaKlijenta.Location = new System.Drawing.Point(184, 18);
             this.lblAdresaKlijenta.Name = "lblAdresaKlijenta";
             this.lblAdresaKlijenta.Size = new System.Drawing.Size(67, 24);
             this.lblAdresaKlijenta.TabIndex = 2;
@@ -259,6 +260,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnObrisiKlijenta);
             this.groupBox2.Controls.Add(this.btnPromeniStatus);
             this.groupBox2.Controls.Add(this.btnPreuzeto);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -291,6 +293,18 @@
             this.btnPreuzeto.Text = "Preuzeto";
             this.btnPreuzeto.UseVisualStyleBackColor = true;
             this.btnPreuzeto.Click += new System.EventHandler(this.btnPreuzeto_Click_1);
+            // 
+            // btnObrisiKlijenta
+            // 
+            this.btnObrisiKlijenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnObrisiKlijenta.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObrisiKlijenta.Location = new System.Drawing.Point(107, 75);
+            this.btnObrisiKlijenta.Name = "btnObrisiKlijenta";
+            this.btnObrisiKlijenta.Size = new System.Drawing.Size(146, 33);
+            this.btnObrisiKlijenta.TabIndex = 2;
+            this.btnObrisiKlijenta.Text = "Obrisi Klijenta";
+            this.btnObrisiKlijenta.UseVisualStyleBackColor = true;
+            this.btnObrisiKlijenta.Click += new System.EventHandler(this.btnObrisiKlijenta_Click);
             // 
             // FormPregledKlijenta
             // 
@@ -335,5 +349,6 @@
         private System.Windows.Forms.Label lblNazivStatus;
         private System.Windows.Forms.Label lblNazivKvar;
         private System.Windows.Forms.Label lblNazivUredjaj;
+        private System.Windows.Forms.Button btnObrisiKlijenta;
     }
 }

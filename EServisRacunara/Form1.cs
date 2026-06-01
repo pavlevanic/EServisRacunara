@@ -99,6 +99,8 @@ namespace EServisRacunara
             pocetnaKartice.Visible = true;
             UcitajStatistiku();
             UcitajPocetnu();
+            txtPretragaKlijenata.Visible = false;
+            txtPretragaUredjaja.Visible = false;
         }
         private void btnKlijenti_Click(object sender, EventArgs e)
         {
@@ -109,6 +111,8 @@ namespace EServisRacunara
             tableUredjaji.Visible = false;
             dataPocetna.Visible = false;
             pocetnaKartice.Visible = false;
+            txtPretragaKlijenata.Visible = true;
+            txtPretragaUredjaja.Visible = false;
         }
 
         private void btnUredjaji_Click(object sender, EventArgs e)
@@ -120,6 +124,8 @@ namespace EServisRacunara
             UcitajUredjaje();
             dataPocetna.Visible = false;
             pocetnaKartice.Visible = false;
+            txtPretragaKlijenata.Visible = false;
+            txtPretragaUredjaja.Visible = true;
 
         }
 
@@ -339,6 +345,36 @@ namespace EServisRacunara
             btnUredjaji.Font = new Font(btnUredjaji.Font, FontStyle.Regular);
             btnUredjaji.ForeColor = Color.FromArgb(0, 0, 0);
             pictureBox3.BackColor = Color.Transparent;
+        }
+
+        private void txtPretragaKlijenata_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPretragaKlijenata.Text))
+                UcitajKlijente();
+            else
+            {
+                tableKorisnici.DataSource = BazaPodataka.PretragaKlijenata(txtPretragaKlijenata.Text.Trim());
+                tableKorisnici.Columns["Id"].Visible = false;
+                tableKorisnici.Columns["DatumUnosa"].Visible = false;
+            }
+        }
+
+        private void txtPretragaKlijenata_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtPretragaKlijenata.Clear();
+        }
+
+        private void txtPretragaUredjaja_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPretragaUredjaja.Text))
+                UcitajUredjaje(); 
+            else
+                tableUredjaji.DataSource = BazaPodataka.PretraziUredjaje(txtPretragaUredjaja.Text.Trim());
+        }
+
+        private void txtPretragaUredjaja_Click(object sender, EventArgs e)
+        {
+            txtPretragaUredjaja.Clear();
         }
     }
 }

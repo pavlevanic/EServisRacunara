@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblKlijent = new System.Windows.Forms.Label();
-            this.txtTelefon = new System.Windows.Forms.TextBox();
             this.btnPronadjiKlijenta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIme = new System.Windows.Forms.TextBox();
@@ -55,6 +54,7 @@
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.btnOtkazi = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtTelefon = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,17 +67,9 @@
             this.lblKlijent.Font = new System.Drawing.Font("Inter", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKlijent.Location = new System.Drawing.Point(3, 18);
             this.lblKlijent.Name = "lblKlijent";
-            this.lblKlijent.Size = new System.Drawing.Size(101, 41);
+            this.lblKlijent.Size = new System.Drawing.Size(131, 53);
             this.lblKlijent.TabIndex = 0;
             this.lblKlijent.Text = "Klijent";
-            // 
-            // txtTelefon
-            // 
-            this.txtTelefon.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefon.Location = new System.Drawing.Point(111, 104);
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(176, 23);
-            this.txtTelefon.TabIndex = 1;
             // 
             // btnPronadjiKlijenta
             // 
@@ -85,7 +77,7 @@
             this.btnPronadjiKlijenta.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPronadjiKlijenta.Location = new System.Drawing.Point(311, 102);
             this.btnPronadjiKlijenta.Name = "btnPronadjiKlijenta";
-            this.btnPronadjiKlijenta.Size = new System.Drawing.Size(153, 28);
+            this.btnPronadjiKlijenta.Size = new System.Drawing.Size(153, 34);
             this.btnPronadjiKlijenta.TabIndex = 2;
             this.btnPronadjiKlijenta.Text = "Pronadji Klijenta";
             this.btnPronadjiKlijenta.UseVisualStyleBackColor = true;
@@ -99,7 +91,7 @@
             this.label1.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 18);
+            this.label1.Size = new System.Drawing.Size(79, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "Telefon:";
             // 
@@ -108,7 +100,7 @@
             this.txtIme.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIme.Location = new System.Drawing.Point(111, 142);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(176, 23);
+            this.txtIme.Size = new System.Drawing.Size(176, 27);
             this.txtIme.TabIndex = 4;
             // 
             // txtPrezime
@@ -116,7 +108,7 @@
             this.txtPrezime.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrezime.Location = new System.Drawing.Point(111, 171);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(176, 23);
+            this.txtPrezime.Size = new System.Drawing.Size(176, 27);
             this.txtPrezime.TabIndex = 5;
             // 
             // txtAdresa
@@ -124,7 +116,7 @@
             this.txtAdresa.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdresa.Location = new System.Drawing.Point(111, 200);
             this.txtAdresa.Name = "txtAdresa";
-            this.txtAdresa.Size = new System.Drawing.Size(176, 23);
+            this.txtAdresa.Size = new System.Drawing.Size(176, 27);
             this.txtAdresa.TabIndex = 6;
             // 
             // label2
@@ -135,7 +127,7 @@
             this.label2.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(32, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 18);
+            this.label2.Size = new System.Drawing.Size(47, 24);
             this.label2.TabIndex = 7;
             this.label2.Text = "Ime:";
             // 
@@ -147,7 +139,7 @@
             this.label3.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(6, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 18);
+            this.label3.Size = new System.Drawing.Size(85, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "Prezime:";
             // 
@@ -159,12 +151,13 @@
             this.label4.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(10, 198);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 18);
+            this.label4.Size = new System.Drawing.Size(77, 24);
             this.label4.TabIndex = 9;
             this.label4.Text = "Adresa:";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTelefon);
             this.groupBox1.Controls.Add(this.lblPrijem);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lblKlijent);
@@ -175,7 +168,6 @@
             this.groupBox1.Controls.Add(this.txtIme);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnPronadjiKlijenta);
-            this.groupBox1.Controls.Add(this.txtTelefon);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -190,7 +182,7 @@
             this.lblPrijem.Font = new System.Drawing.Font("Inter", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrijem.Location = new System.Drawing.Point(406, 18);
             this.lblPrijem.Name = "lblPrijem";
-            this.lblPrijem.Size = new System.Drawing.Size(173, 41);
+            this.lblPrijem.Size = new System.Drawing.Size(222, 53);
             this.lblPrijem.TabIndex = 10;
             this.lblPrijem.Text = "Novi Prijem";
             // 
@@ -199,7 +191,7 @@
             this.txtTip.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTip.Location = new System.Drawing.Point(111, 55);
             this.txtTip.Name = "txtTip";
-            this.txtTip.Size = new System.Drawing.Size(176, 23);
+            this.txtTip.Size = new System.Drawing.Size(176, 27);
             this.txtTip.TabIndex = 10;
             // 
             // label5
@@ -209,7 +201,7 @@
             this.label5.Font = new System.Drawing.Font("Inter", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(18, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 41);
+            this.label5.Size = new System.Drawing.Size(148, 53);
             this.label5.TabIndex = 10;
             this.label5.Text = "Uredjaj";
             // 
@@ -218,7 +210,7 @@
             this.txtModel.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModel.Location = new System.Drawing.Point(111, 84);
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(176, 23);
+            this.txtModel.Size = new System.Drawing.Size(176, 27);
             this.txtModel.TabIndex = 11;
             // 
             // txtKvar
@@ -236,7 +228,7 @@
             this.datePrijem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePrijem.Location = new System.Drawing.Point(111, 186);
             this.datePrijem.Name = "datePrijem";
-            this.datePrijem.Size = new System.Drawing.Size(176, 23);
+            this.datePrijem.Size = new System.Drawing.Size(176, 27);
             this.datePrijem.TabIndex = 13;
             // 
             // txtNapomena
@@ -255,7 +247,7 @@
             this.label6.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(37, 55);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 18);
+            this.label6.Size = new System.Drawing.Size(43, 24);
             this.label6.TabIndex = 10;
             this.label6.Text = "Tip:";
             // 
@@ -266,7 +258,7 @@
             this.label7.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(21, 84);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 18);
+            this.label7.Size = new System.Drawing.Size(68, 24);
             this.label7.TabIndex = 15;
             this.label7.Text = "Model:";
             // 
@@ -277,7 +269,7 @@
             this.label8.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(33, 110);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 18);
+            this.label8.Size = new System.Drawing.Size(54, 24);
             this.label8.TabIndex = 16;
             this.label8.Text = "Kvar:";
             // 
@@ -288,7 +280,7 @@
             this.label9.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(22, 187);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 18);
+            this.label9.Size = new System.Drawing.Size(71, 24);
             this.label9.TabIndex = 17;
             this.label9.Text = "Datum:";
             // 
@@ -299,7 +291,7 @@
             this.label10.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(-3, 225);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 18);
+            this.label10.Size = new System.Drawing.Size(107, 24);
             this.label10.TabIndex = 18;
             this.label10.Text = "Napomena:";
             // 
@@ -334,6 +326,7 @@
             this.btnSacuvaj.TabIndex = 10;
             this.btnSacuvaj.Text = "Sacuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
             // btnOtkazi
             // 
@@ -359,6 +352,15 @@
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             // 
+            // txtTelefon
+            // 
+            this.txtTelefon.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefon.Location = new System.Drawing.Point(111, 100);
+            this.txtTelefon.Mask = "000-000-0000";
+            this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.Size = new System.Drawing.Size(176, 28);
+            this.txtTelefon.TabIndex = 11;
+            // 
             // FormPrijem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,7 +383,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblKlijent;
-        private System.Windows.Forms.TextBox txtTelefon;
         private System.Windows.Forms.Button btnPronadjiKlijenta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIme;
@@ -407,5 +408,6 @@
         private System.Windows.Forms.Button btnOtkazi;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblPrijem;
+        private System.Windows.Forms.MaskedTextBox txtTelefon;
     }
 }

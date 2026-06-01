@@ -73,7 +73,7 @@ namespace EServisRacunara
             using (var cmd = new SqlCommand(
                 "SELECT id, ime, prezime, telefon, adresa, datum_unosa " +
                 "FROM klijenti " +
-                "WHERE (ime + ' ' + prezime) LIKE @t OR telefon LIKE @t " +
+                "WHERE (ime + ' ' + prezime) LIKE @t OR telefon LIKE @t OR adresa LIKE @t " +
                 "ORDER BY prezime, ime;", conn))
             {
                 cmd.Parameters.AddWithValue("@t", $"%{tekst}%");
@@ -309,6 +309,36 @@ namespace EServisRacunara
                 cmd.Parameters.AddWithValue("@id", u.Id);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public static List<Uredjaj> PretraziUredjaje(string tekst, string sortKolona = "datum_prijema", string sortSmer = "DESC")
+        {
+            var dozvoljeneKolone = new[] { "datum_prijema", "model", "status", "klijent_ime" };
+            if (!dozvoljeneKolone.Contains(sortKolona))
+                sortKolona = "datum_prijema";
+
+            var lista = new List<Uredjaj>();
+            using (var conn = GetConnection())
+            using (var cmd = new SqlCommand($@"
+        SELECT u.id AS uredjaj_id, u.klijent_id,
+               k.ime + ' ' + k.prezime AS klijent_ime,
+               k.telefon, u.tip_uredjaja, u.model,
+               u.opis_kvara, u.datum_prijema, u.status,
+               u.cena_popravke, u.napomena, u.datum_izmene
+        FROM uredjaji u
+        INNER JOIN klijenti k ON k.id = u.klijent_id
+        WHERE u.model        LIKE @t
+           OR k.ime + ' ' + k.prezime LIKE @t
+           OR u.status       LIKE @t
+           OR u.tip_uredjaja LIKE @t
+        ORDER BY {sortKolona} {sortSmer};", conn))
+            {
+                cmd.Parameters.AddWithValue("@t", $"%{tekst}%");
+                using (var rdr = cmd.ExecuteReader())
+                    while (rdr.Read())
+                        lista.Add(MapUredjaj(rdr));
+            }
+            return lista;
         }
 
         public static void PromeniStatus(int uredjajId, string noviStatus, string napomena = "")

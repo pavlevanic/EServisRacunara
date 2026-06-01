@@ -19,14 +19,15 @@ namespace EServisRacunara
         {
             InitializeComponent();
         }
-
+        int id;
         public void UcitajPodatke(Klijent klijent)
         {
+            id = klijent.Id;
             lblImeKlijenta.Text = klijent.Ime + " " + klijent.Prezime;
             lblTelefonKlijenta.Text = klijent.Telefon;
             lblAdresaKlijenta.Text = klijent.Adresa;
 
-            _uredjaji = BazaPodataka.GetUredjajiKlijenta(klijent.Id);
+            _uredjaji = BazaPodataka.GetUredjajiKlijenta(id);
 
             listUredjaji.Items.Clear();
 
@@ -41,6 +42,21 @@ namespace EServisRacunara
                 listUredjaji.Items.Add(u.Model + " — " + u.Status);
 
             listUredjaji.SelectedIndex = 0;
+        }
+
+        public void ObrisiKlijenta(int id)
+        {
+
+            var potvrda = MessageBox.Show(
+                "Da li ste sigurni da želite da obrišete klijenta ?",
+                "Potvrda brisanja",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if (potvrda == DialogResult.Yes)
+            {
+                BazaPodataka.ObrisiKlijenta(id);
+                this.Close();
+            }
         }
 
         private void listUredjaji_SelectedIndexChanged(object sender, EventArgs e)
@@ -179,6 +195,9 @@ namespace EServisRacunara
             }
         }
 
-       
+        private void btnObrisiKlijenta_Click(object sender, EventArgs e)
+        {
+            ObrisiKlijenta(id);
+        }
     }
 }
