@@ -42,7 +42,7 @@ SQL skripta za kreiranje baze nalazi se u fajlu `eservis_database.sql`.
 
 1. Kloniraj repozitorijum
 ```bash
-git clone https://github.com/tvoj-username/EServisRacunara.git
+git clone https://github.com/pavlevanic/EServisRacunara.git
 ```
 
 2. Kreiraj bazu podataka pokretanjem `eservis_database.sql` u SQL Server Management Studio
